@@ -22,6 +22,8 @@ class _TVCardFilmState extends State<TVCardFilm> {
 
   @override
   Widget build(BuildContext context) {
+    final double dpr = MediaQuery.of(context).devicePixelRatio;
+
     return InkWell(
       onTap: () {},
       child: FocusableActionDetector(
@@ -32,19 +34,19 @@ class _TVCardFilmState extends State<TVCardFilm> {
         },
         child: Container(
           margin: EdgeInsets.only(
-            right: 44,
-            left: (widget.idx == 0) ? 200 : 0,
+            right: 44 / dpr,
+            left: (widget.idx == 0) ? (200 / dpr) : 0,
           ),
-          padding: const EdgeInsets.only(
-            left: 8,
-            right: 8,
-            top: 8,
+          padding: EdgeInsets.only(
+            left: 8 / dpr,
+            right: 8 / dpr,
+            top: 8 / dpr,
           ),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               ImgCard(
-                marginBottom: 20,
+                marginBottom: 20 / dpr,
                 isFocused: _isFocused,
                 poster: widget.movie.poster,
                 rating: widget.movie.rating,
@@ -52,10 +54,10 @@ class _TVCardFilmState extends State<TVCardFilm> {
               Text(
                 widget.movie.name,
                 textAlign: TextAlign.left,
-                style: const TextStyle(
+                style: TextStyle(
                   fontFamily: 'TT Norms Pro',
                   fontWeight: FontWeight.w500,
-                  fontSize: 28,
+                  fontSize: 28 / dpr,
                   color: Colors.white,
                 ),
               )

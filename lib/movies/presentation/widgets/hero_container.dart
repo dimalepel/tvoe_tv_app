@@ -14,6 +14,8 @@ class HeroContainer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final double dpr = MediaQuery.of(context).devicePixelRatio;
+
     return Container(
       decoration: BoxDecoration(
         image: DecorationImage(
@@ -21,37 +23,42 @@ class HeroContainer extends StatelessWidget {
           alignment: Alignment.topRight,
         ),
       ),
-      height: 800,
-      padding: const EdgeInsets.only(
-        bottom: 24,
+      height: 800 / dpr,
+      padding: EdgeInsets.only(
+        bottom: 24 / dpr,
       ),
-      margin: const EdgeInsets.only(
-        bottom: 71,
+      margin: EdgeInsets.only(
+        bottom: 71 / dpr,
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisAlignment: MainAxisAlignment.end,
         children: [
           Container(
-            margin: const EdgeInsets.only(
-              bottom: 36,
+            margin: EdgeInsets.only(
+              bottom: 36 / dpr,
             ),
             child: Image.asset(
               movie.logo,
-              width: 576,
-              height: 228,
+              width: 576 / dpr,
+              height: 228 / dpr,
               fit: BoxFit.contain,
             ),
           ),
           Container(
-            width: 886,
-            margin: const EdgeInsets.only(
-              bottom: 36,
+            width: 886 / dpr,
+            margin: EdgeInsets.only(
+              bottom: 36 / dpr,
             ),
             child: Text(
               textAlign: TextAlign.center,
               movie.shortDesc,
-              style: MovieTextStyle.mainText,
+              style: TextStyle(
+                color: Colors.white,
+                fontFamily: 'TT Norms Pro',
+                fontSize: 40 / dpr,
+                fontWeight: FontWeight.w500,
+              ),
             ),
           ),
           Row(
@@ -67,8 +74,8 @@ class HeroContainer extends StatelessWidget {
                     Color(0xff2575fc),
                   ],
                 ),
-                margin: const EdgeInsets.only(
-                  right: 24,
+                margin: EdgeInsets.only(
+                  right: 24 / dpr,
                 ),
                 onPressed: () {},
               ),

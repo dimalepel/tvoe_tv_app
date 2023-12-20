@@ -30,6 +30,8 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final double dpr = MediaQuery.of(context).devicePixelRatio;
+
     return Scaffold(
       backgroundColor: MovieAppColors.black,
       body: Stack(
@@ -48,26 +50,31 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
                 // New movies
                 Container(
-                  margin: const EdgeInsets.only(
-                    bottom: 110,
+                  margin: EdgeInsets.only(
+                    bottom: (110 / dpr),
                   ),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: [
                       Container(
-                        margin: const EdgeInsets.only(
-                          bottom: 24,
+                        margin: EdgeInsets.only(
+                          bottom: 24 / dpr,
                         ),
-                        padding: const EdgeInsets.only(
-                          left: 207,
+                        padding: EdgeInsets.only(
+                          left: 207 / dpr,
                         ),
                         child: Text(
                           'Новинки',
-                          style: MovieTextStyle.mainText,
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontFamily: 'TT Norms Pro',
+                            fontSize: 40 / dpr,
+                            fontWeight: FontWeight.w500,
+                          ),
                         ),
                       ),
                       SizedBox(
-                        height: 667,
+                        height: 667 / dpr,
                         child: Consumer<MovieRepository>(
                           builder: (context, movieRepository, child) {
                             return ListView.builder(
@@ -91,27 +98,27 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
                 // Top-10
                 Container(
-                  margin: const EdgeInsets.only(
-                    bottom: 110,
+                  margin: EdgeInsets.only(
+                    bottom: 110 / dpr,
                   ),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: [
                       Container(
-                        margin: const EdgeInsets.only(
-                          bottom: 24,
+                        margin: EdgeInsets.only(
+                          bottom: 24 / dpr,
                         ),
-                        padding: const EdgeInsets.only(
-                          left: 207,
+                        padding: EdgeInsets.only(
+                          left: 207 / dpr,
                         ),
                         child: Row(
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
                             Container(
-                              width: 200,
-                              height: 52,
-                              margin: const EdgeInsets.only(
-                                right: 20,
+                              width: 200 / dpr,
+                              height: 52 / dpr,
+                              margin: EdgeInsets.only(
+                                right: 20 / dpr,
                               ),
                               child: SvgPicture.asset(
                                 'assets/images/svgs/icon--top-10.svg',
@@ -119,13 +126,18 @@ class _HomeScreenState extends State<HomeScreen> {
                             ),
                             Text(
                               'просмотров за неделю',
-                              style: MovieTextStyle.mainText,
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontFamily: 'TT Norms Pro',
+                                fontSize: 40 / dpr,
+                                fontWeight: FontWeight.w500,
+                              ),
                             ),
                           ],
                         ),
                       ),
                       SizedBox(
-                        height: 667,
+                        height: 667 / dpr,
                         child: Consumer<MovieRepository>(
                           builder: (context, movieRepository, child) {
                             return ListView.builder(
@@ -155,8 +167,8 @@ class _HomeScreenState extends State<HomeScreen> {
             left: 0,
             bottom: 0,
             child: Container(
-              padding: const EdgeInsets.only(
-                left: 55,
+              padding: EdgeInsets.only(
+                left: 55 / dpr,
               ),
               child: Column(
                 children: [
@@ -165,8 +177,8 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                   TVNavigation(
                     navigation: MovieAppNavigation.navigationIcons,
-                    margin: const EdgeInsets.only(
-                      bottom: 28,
+                    margin: EdgeInsets.only(
+                      bottom: 28 / dpr,
                     ),
                   ),
                   ButtonTVMini(

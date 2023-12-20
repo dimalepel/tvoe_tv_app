@@ -4,19 +4,19 @@ class MovieTextStyle {
   static TextStyle mainText = const TextStyle(
     color: Colors.white,
     fontFamily: 'TT Norms Pro',
-    fontSize: 40,
+    fontSize: 20, // 40
     fontWeight: FontWeight.w500,
   );
   static TextStyle buttonLabel = const TextStyle(
     color: Colors.white,
     fontFamily: 'TT Norms Pro',
-    fontSize: 30,
+    fontSize: 15, // 30
     fontWeight: FontWeight.w500,
   );
   static TextStyle ratingLabel = const TextStyle(
     color: Colors.white,
     fontFamily: 'TT Norms Pro',
-    fontSize: 28,
+    fontSize: 14, // 28
     fontWeight: FontWeight.w500,
   );
 }

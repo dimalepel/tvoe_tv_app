@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:tvoe_tv_app/core/constants.dart';
 
 class ButtonTV extends StatelessWidget {
   final String label;
@@ -17,12 +16,14 @@ class ButtonTV extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final double dpr = MediaQuery.of(context).devicePixelRatio;
+
     return Container(
-      width: 243,
-      height: 80,
+      width: 243 / dpr,
+      height: 80 / dpr,
       margin: margin,
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(16),
+        borderRadius: BorderRadius.circular(16 / dpr),
         gradient: gradient,
       ),
       child: ElevatedButton(
@@ -31,12 +32,17 @@ class ButtonTV extends StatelessWidget {
           backgroundColor: Colors.transparent,
           shadowColor: Colors.transparent,
           shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(16),
+            borderRadius: BorderRadius.circular(16 / dpr),
           ),
         ),
         child: Text(
           label,
-          style: MovieTextStyle.buttonLabel,
+          style: TextStyle(
+            color: Colors.white,
+            fontFamily: 'TT Norms Pro',
+            fontSize: 30 / dpr,
+            fontWeight: FontWeight.w500,
+          ),
         ),
       ),
     );

@@ -13,10 +13,15 @@ class ButtonTVMini extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final double dpr = MediaQuery.of(context).devicePixelRatio;
+
     return InkWell(
       onTap: onTap,
       child: SvgPicture.asset(
         navigationElement,
+        width: 44 / dpr,
+        height: 44 / dpr,
+        fit: BoxFit.contain,
       ),
     );
   }

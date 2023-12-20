@@ -23,6 +23,8 @@ class _RatingCardTVState extends State<RatingCardTV> {
 
   @override
   Widget build(BuildContext context) {
+    final double dpr = MediaQuery.of(context).devicePixelRatio;
+
     return InkWell(
       onTap: () {},
       child: FocusableActionDetector(
@@ -33,8 +35,8 @@ class _RatingCardTVState extends State<RatingCardTV> {
         },
         child: Container(
           margin: EdgeInsets.only(
-            right: 92,
-            left: (widget.idx == 0) ? 200 : 0,
+            right: 92 / dpr,
+            left: (widget.idx == 0) ? (200 / dpr) : 0,
           ),
           child: Stack(
             children: [
@@ -42,16 +44,17 @@ class _RatingCardTVState extends State<RatingCardTV> {
                 alignment: Alignment.centerLeft,
                 child: SvgPicture.asset(
                   'assets/images/svgs/icon--rating-${widget.idx + 1}.svg',
+                  height: 290 / dpr,
                 ),
               ),
               Container(
-                padding: const EdgeInsets.only(
-                  left: 8,
-                  right: 8,
-                  top: 8,
+                padding: EdgeInsets.only(
+                  left: 8 / dpr,
+                  right: 8 / dpr,
+                  top: 8 / dpr,
                 ),
                 margin: EdgeInsets.only(
-                  left: (widget.idx == 9) ? 401 : 161,
+                  left: (widget.idx == 9) ? (401 / dpr) : (161 / dpr),
                 ),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,

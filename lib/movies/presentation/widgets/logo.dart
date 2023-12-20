@@ -10,15 +10,17 @@ class LogoImg extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final double dpr = MediaQuery.of(context).devicePixelRatio;
+
     return Container(
-      margin: const EdgeInsets.only(
-        bottom: 110,
-        top: 40,
+      margin: EdgeInsets.only(
+        bottom: 110 / dpr,
+        top: 40 / dpr,
       ),
       child: Image.asset(
         logo,
-        width: 32,
-        height: 50,
+        width: 32 / dpr,
+        height: 50 / dpr,
         fit: BoxFit.contain,
       ),
     );

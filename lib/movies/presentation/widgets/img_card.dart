@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:tvoe_tv_app/core/constants.dart';
 
 class ImgCard extends StatelessWidget {
   final double marginBottom;
@@ -17,6 +16,8 @@ class ImgCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final double dpr = MediaQuery.of(context).devicePixelRatio;
+
     return Container(
       margin: EdgeInsets.only(
         bottom: marginBottom,
@@ -26,13 +27,13 @@ class ImgCard extends StatelessWidget {
         children: [
           if (isFocused)
             Positioned(
-              top: -4,
-              right: -4,
-              bottom: -4,
-              left: -4,
+              top: -4 / dpr,
+              right: -4 / dpr,
+              bottom: -4 / dpr,
+              left: -4 / dpr,
               child: Container(
                 decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(20),
+                  borderRadius: BorderRadius.circular(20 / dpr),
                   gradient: const LinearGradient(
                     begin: Alignment.centerLeft,
                     end: Alignment.centerRight,
@@ -46,31 +47,33 @@ class ImgCard extends StatelessWidget {
             ),
           Container(
             decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(20),
+              borderRadius: BorderRadius.circular(20 / dpr),
               border: Border.all(
-                width: 4,
+                width: 4 / dpr,
                 color:
                     (isFocused) ? const Color(0xff09090C) : Colors.transparent,
               ),
               color: (isFocused) ? const Color(0xff09090C) : Colors.transparent,
             ),
             child: ClipRRect(
-              borderRadius: BorderRadius.circular(20),
+              borderRadius: BorderRadius.circular(20 / dpr),
               child: Image.asset(
                 poster,
                 fit: BoxFit.cover,
+                width: 398 / dpr,
+                height: 597 / dpr,
               ),
             ),
           ),
           if (rating > 0)
             Positioned(
-              top: 32,
-              left: 32,
+              top: 32 / dpr,
+              left: 32 / dpr,
               child: Container(
-                width: 75,
-                height: 48,
+                width: 75 / dpr,
+                height: 48 / dpr,
                 decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(12),
+                  borderRadius: BorderRadius.circular(12 / dpr),
                   gradient: const LinearGradient(
                     begin: Alignment.centerLeft,
                     end: Alignment.centerRight,
@@ -83,7 +86,12 @@ class ImgCard extends StatelessWidget {
                 child: Center(
                   child: Text(
                     rating.toString(),
-                    style: MovieTextStyle.ratingLabel,
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontFamily: 'TT Norms Pro',
+                      fontSize: 28 / dpr,
+                      fontWeight: FontWeight.w500,
+                    ),
                   ),
                 ),
               ),
