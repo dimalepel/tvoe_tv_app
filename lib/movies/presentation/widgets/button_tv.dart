@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../../../core/utils.dart';
+
 class ButtonTV extends StatelessWidget {
   final String label;
   final Function()? onPressed;
@@ -37,12 +39,7 @@ class ButtonTV extends StatelessWidget {
         ),
         child: Text(
           label,
-          style: TextStyle(
-            color: Colors.white,
-            fontFamily: 'TT Norms Pro',
-            fontSize: 30 / dpr,
-            fontWeight: FontWeight.w500,
-          ),
+          style: Utils.getTextStyle(30, dpr),
         ),
       ),
     );

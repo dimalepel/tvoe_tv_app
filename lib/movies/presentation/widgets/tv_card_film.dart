@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:tvoe_tv_app/movies/presentation/widgets/img_card.dart';
 
+import '../../../core/utils.dart';
 import '../../domain/model/movie.dart';
 
 class TVCardFilm extends StatefulWidget {
@@ -54,12 +55,7 @@ class _TVCardFilmState extends State<TVCardFilm> {
               Text(
                 widget.movie.name,
                 textAlign: TextAlign.left,
-                style: TextStyle(
-                  fontFamily: 'TT Norms Pro',
-                  fontWeight: FontWeight.w500,
-                  fontSize: 28 / dpr,
-                  color: Colors.white,
-                ),
+                style: Utils.getTextStyle(28, dpr),
               )
             ],
           ),

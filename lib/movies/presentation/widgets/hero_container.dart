@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:tvoe_tv_app/core/constants.dart';
 
+import '../../../core/utils.dart';
 import '../../domain/model/movie.dart';
 import 'button_tv.dart';
 
@@ -53,12 +53,7 @@ class HeroContainer extends StatelessWidget {
             child: Text(
               textAlign: TextAlign.center,
               movie.shortDesc,
-              style: TextStyle(
-                color: Colors.white,
-                fontFamily: 'TT Norms Pro',
-                fontSize: 40 / dpr,
-                fontWeight: FontWeight.w500,
-              ),
+              style: Utils.getTextStyle(40, dpr),
             ),
           ),
           Row(

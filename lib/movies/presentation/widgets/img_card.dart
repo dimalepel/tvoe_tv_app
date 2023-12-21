@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../../../core/utils.dart';
+
 class ImgCard extends StatelessWidget {
   final double marginBottom;
   final bool isFocused;
@@ -86,12 +88,7 @@ class ImgCard extends StatelessWidget {
                 child: Center(
                   child: Text(
                     rating.toString(),
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontFamily: 'TT Norms Pro',
-                      fontSize: 28 / dpr,
-                      fontWeight: FontWeight.w500,
-                    ),
+                    style: Utils.getTextStyle(28, dpr),
                   ),
                 ),
               ),

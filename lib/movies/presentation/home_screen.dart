@@ -10,6 +10,7 @@ import 'package:tvoe_tv_app/movies/presentation/widgets/raiting_card_tv.dart';
 import 'package:tvoe_tv_app/movies/presentation/widgets/tv_card_film.dart';
 import 'package:tvoe_tv_app/movies/presentation/widgets/tv_navigation.dart';
 
+import '../../core/utils.dart';
 import '../domain/model/movie.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -65,12 +66,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         ),
                         child: Text(
                           'Новинки',
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontFamily: 'TT Norms Pro',
-                            fontSize: 40 / dpr,
-                            fontWeight: FontWeight.w500,
-                          ),
+                          style: Utils.getTextStyle(40, dpr),
                         ),
                       ),
                       SizedBox(
@@ -126,12 +122,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             ),
                             Text(
                               'просмотров за неделю',
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontFamily: 'TT Norms Pro',
-                                fontSize: 40 / dpr,
-                                fontWeight: FontWeight.w500,
-                              ),
+                              style: Utils.getTextStyle(40, dpr),
                             ),
                           ],
                         ),
@@ -170,28 +161,30 @@ class _HomeScreenState extends State<HomeScreen> {
               padding: EdgeInsets.only(
                 left: 55 / dpr,
               ),
-              child: Column(
-                children: [
-                  const LogoImg(
-                    logo: 'assets/images/pic--logo.png',
-                  ),
-                  TVNavigation(
-                    navigation: MovieAppNavigation.navigationIcons,
-                    margin: EdgeInsets.only(
-                      bottom: 28 / dpr,
+              child: SingleChildScrollView(
+                child: Column(
+                  children: [
+                    const LogoImg(
+                      logo: 'assets/images/pic--logo.png',
                     ),
-                  ),
-                  ButtonTVMini(
-                    navigationElement: 'assets/images/svgs/icon--arrow.svg',
-                    onTap: () {
-                      _scrollController.animateTo(
-                        0,
-                        duration: const Duration(milliseconds: 500),
-                        curve: Curves.fastOutSlowIn,
-                      );
-                    },
-                  ),
-                ],
+                    TVNavigation(
+                      navigation: MovieAppNavigation.navigationIcons,
+                      margin: EdgeInsets.only(
+                        bottom: 28 / dpr,
+                      ),
+                    ),
+                    ButtonTVMini(
+                      navigationElement: 'assets/images/svgs/icon--arrow.svg',
+                      onTap: () {
+                        _scrollController.animateTo(
+                          0,
+                          duration: const Duration(milliseconds: 500),
+                          curve: Curves.fastOutSlowIn,
+                        );
+                      },
+                    ),
+                  ],
+                ),
               ),
             ),
           ),
