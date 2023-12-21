@@ -17,7 +17,7 @@ class TVNavigation extends StatelessWidget {
 
     return Container(
       margin: EdgeInsets.only(
-        bottom: 32 / dpr,
+        bottom: 24 / dpr,
       ),
       child: Column(
         children: [

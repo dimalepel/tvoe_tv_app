@@ -48,7 +48,7 @@ class HeroContainer extends StatelessWidget {
           Container(
             width: 886 / dpr,
             margin: EdgeInsets.only(
-              bottom: 36 / dpr,
+              bottom: 24 / dpr,
             ),
             child: Text(
               textAlign: TextAlign.center,

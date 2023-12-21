@@ -52,21 +52,25 @@ class _HomeScreenState extends State<HomeScreen> {
                 // New movies
                 Container(
                   margin: EdgeInsets.only(
-                    bottom: (110 / dpr),
+                    bottom: (120 / dpr),
                   ),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: [
                       Container(
                         margin: EdgeInsets.only(
-                          bottom: 24 / dpr,
+                          bottom: 14 / dpr,
                         ),
                         padding: EdgeInsets.only(
-                          left: 207 / dpr,
+                          left: 214 / dpr,
                         ),
                         child: Text(
                           'Новинки',
-                          style: Utils.getTextStyle(40, dpr),
+                          style: Utils.getTextStyle(
+                            40,
+                            dpr,
+                            fontWeight: FontWeight.w700,
+                          ),
                         ),
                       ),
                       SizedBox(
@@ -102,10 +106,10 @@ class _HomeScreenState extends State<HomeScreen> {
                     children: [
                       Container(
                         margin: EdgeInsets.only(
-                          bottom: 24 / dpr,
+                          bottom: 20 / dpr,
                         ),
                         padding: EdgeInsets.only(
-                          left: 207 / dpr,
+                          left: 214 / dpr,
                         ),
                         child: Row(
                           crossAxisAlignment: CrossAxisAlignment.center,
@@ -122,7 +126,8 @@ class _HomeScreenState extends State<HomeScreen> {
                             ),
                             Text(
                               'просмотров за неделю',
-                              style: Utils.getTextStyle(40, dpr),
+                              style: Utils.getTextStyle(40, dpr,
+                                  fontWeight: FontWeight.w700),
                             ),
                           ],
                         ),
@@ -159,7 +164,7 @@ class _HomeScreenState extends State<HomeScreen> {
             bottom: 0,
             child: Container(
               padding: EdgeInsets.only(
-                left: 55 / dpr,
+                left: 60 / dpr,
               ),
               child: SingleChildScrollView(
                 child: Column(
@@ -170,7 +175,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     TVNavigation(
                       navigation: MovieAppNavigation.navigationIcons,
                       margin: EdgeInsets.only(
-                        bottom: 28 / dpr,
+                        bottom: 40 / dpr,
                       ),
                     ),
                     ButtonTVMini(

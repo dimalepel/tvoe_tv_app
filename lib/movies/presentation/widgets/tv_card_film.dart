@@ -35,7 +35,7 @@ class _TVCardFilmState extends State<TVCardFilm> {
         },
         child: Container(
           margin: EdgeInsets.only(
-            right: 44 / dpr,
+            right: 22 / dpr,
             left: (widget.idx == 0) ? (200 / dpr) : 0,
           ),
           padding: EdgeInsets.only(
@@ -52,10 +52,15 @@ class _TVCardFilmState extends State<TVCardFilm> {
                 poster: widget.movie.poster,
                 rating: widget.movie.rating,
               ),
-              Text(
-                widget.movie.name,
-                textAlign: TextAlign.left,
-                style: Utils.getTextStyle(28, dpr),
+              Container(
+                margin: EdgeInsets.only(
+                  left: 4 / dpr,
+                ),
+                child: Text(
+                  widget.movie.name,
+                  textAlign: TextAlign.left,
+                  style: Utils.getTextStyle(28, dpr),
+                ),
               )
             ],
           ),
