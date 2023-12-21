@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../../core/constants.dart';
 import '../../../core/utils.dart';
 
 class ImgCard extends StatelessWidget {
@@ -36,12 +37,12 @@ class ImgCard extends StatelessWidget {
               child: Container(
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(20 / dpr),
-                  gradient: const LinearGradient(
+                  gradient: LinearGradient(
                     begin: Alignment.centerLeft,
                     end: Alignment.centerRight,
                     colors: [
-                      Color(0xff5712B1),
-                      Color(0xff2B6CFA),
+                      MovieAppColors.gradientStart,
+                      MovieAppColors.gradientEnd,
                     ],
                   ),
                 ),
@@ -76,12 +77,12 @@ class ImgCard extends StatelessWidget {
                 height: 48 / dpr,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(12 / dpr),
-                  gradient: const LinearGradient(
+                  gradient: LinearGradient(
                     begin: Alignment.centerLeft,
                     end: Alignment.centerRight,
                     colors: [
-                      Color(0xff6A11CB),
-                      Color(0xff2575FC),
+                      MovieAppColors.gradientStart,
+                      MovieAppColors.gradientEnd,
                     ],
                   ),
                 ),

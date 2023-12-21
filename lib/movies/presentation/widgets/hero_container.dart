@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../../core/constants.dart';
 import '../../../core/utils.dart';
 import '../../domain/model/movie.dart';
 import 'button_tv.dart';
@@ -61,12 +62,12 @@ class HeroContainer extends StatelessWidget {
             children: [
               ButtonTV(
                 label: 'Смотреть',
-                gradient: const LinearGradient(
+                gradient: LinearGradient(
                   begin: Alignment.centerLeft,
                   end: Alignment.centerRight,
                   colors: [
-                    Color(0xff6A11CB),
-                    Color(0xff2575fc),
+                    MovieAppColors.gradientStart,
+                    MovieAppColors.gradientEnd,
                   ],
                 ),
                 margin: EdgeInsets.only(
@@ -76,14 +77,10 @@ class HeroContainer extends StatelessWidget {
               ),
               ButtonTV(
                 label: 'О фильме',
-                gradient: const LinearGradient(
+                gradient: LinearGradient(
                   begin: Alignment.centerLeft,
                   end: Alignment.centerRight,
-                  colors: [
-                    Color.fromARGB(10, 255, 255, 255),
-                    Color.fromARGB(13, 255, 255, 255),
-                    Color.fromARGB(10, 255, 255, 255)
-                  ],
+                  colors: MovieAppColors.gradientFull,
                 ),
                 onPressed: () {},
               ),
