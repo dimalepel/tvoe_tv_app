@@ -13,9 +13,11 @@ class TVNavigation extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final double dpr = MediaQuery.of(context).devicePixelRatio;
+
     return Container(
-      margin: const EdgeInsets.only(
-        bottom: 32,
+      margin: EdgeInsets.only(
+        bottom: 24 / dpr,
       ),
       child: Column(
         children: [

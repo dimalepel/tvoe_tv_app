@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:tvoe_tv_app/movies/presentation/widgets/img_card.dart';
 
+import '../../../core/utils.dart';
 import '../../domain/model/movie.dart';
 
 class TVCardFilm extends StatefulWidget {
@@ -22,6 +23,8 @@ class _TVCardFilmState extends State<TVCardFilm> {
 
   @override
   Widget build(BuildContext context) {
+    final double dpr = MediaQuery.of(context).devicePixelRatio;
+
     return InkWell(
       onTap: () {},
       child: FocusableActionDetector(
@@ -32,31 +35,31 @@ class _TVCardFilmState extends State<TVCardFilm> {
         },
         child: Container(
           margin: EdgeInsets.only(
-            right: 44,
-            left: (widget.idx == 0) ? 200 : 0,
+            right: 22 / dpr,
+            left: (widget.idx == 0) ? (200 / dpr) : 0,
           ),
-          padding: const EdgeInsets.only(
-            left: 8,
-            right: 8,
-            top: 8,
+          padding: EdgeInsets.only(
+            left: 8 / dpr,
+            right: 8 / dpr,
+            top: 8 / dpr,
           ),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               ImgCard(
-                marginBottom: 20,
+                marginBottom: 20 / dpr,
                 isFocused: _isFocused,
                 poster: widget.movie.poster,
                 rating: widget.movie.rating,
               ),
-              Text(
-                widget.movie.name,
-                textAlign: TextAlign.left,
-                style: const TextStyle(
-                  fontFamily: 'TT Norms Pro',
-                  fontWeight: FontWeight.w500,
-                  fontSize: 28,
-                  color: Colors.white,
+              Container(
+                margin: EdgeInsets.only(
+                  left: 4 / dpr,
+                ),
+                child: Text(
+                  widget.movie.name,
+                  textAlign: TextAlign.left,
+                  style: Utils.getTextStyle(28, dpr),
                 ),
               )
             ],

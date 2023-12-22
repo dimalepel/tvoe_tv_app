@@ -1,28 +1,14 @@
 import 'package:flutter/material.dart';
 
-class MovieTextStyle {
-  static TextStyle mainText = const TextStyle(
-    color: Colors.white,
-    fontFamily: 'TT Norms Pro',
-    fontSize: 40,
-    fontWeight: FontWeight.w500,
-  );
-  static TextStyle buttonLabel = const TextStyle(
-    color: Colors.white,
-    fontFamily: 'TT Norms Pro',
-    fontSize: 30,
-    fontWeight: FontWeight.w500,
-  );
-  static TextStyle ratingLabel = const TextStyle(
-    color: Colors.white,
-    fontFamily: 'TT Norms Pro',
-    fontSize: 28,
-    fontWeight: FontWeight.w500,
-  );
-}
-
-class MovieAppColors {
+abstract class MovieAppColors {
   static Color black = const Color(0xff09090c);
+  static Color gradientStart = const Color(0xff6A11CB);
+  static Color gradientEnd = const Color(0xff2575FC);
+  static List<Color> gradientFull = [
+    const Color.fromARGB(10, 255, 255, 255),
+    const Color.fromARGB(13, 255, 255, 255),
+    const Color.fromARGB(10, 255, 255, 255)
+  ];
 }
 
 class MovieAppNavigation {
